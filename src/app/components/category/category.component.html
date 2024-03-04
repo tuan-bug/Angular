@@ -1,0 +1,42 @@
+<!-- <p>category works!</p>
+<p>Message received in parent: {{ receivedMessage }}</p>
+<app-child-category (messageEvent)="receiveMessage($event)"></app-child-category>
+ -->
+
+<!-- category.component.html -->
+<div class="container mt-5">
+  <div class="d-flex justify-content-between mb-4">
+    <h2>Category List</h2>
+    <a class="btn  btn-success" routerLink="/add_category">Thêm Danh Mục</a>
+    
+  </div>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tên</th>
+          <th scope="col">Mô tả</th>
+          <th scope="col">Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories; let i = index ">
+          <th scope="row">{{i}}</th>
+          <td>{{category.name}}</td>
+          <td>{{category.description}}</td>
+          <td><button (click)="deleteCategory(category.id)">Delete</button></td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- <div>
+    <h2>Add New Category</h2>
+    <input type="text" #name placeholder="Category Name">
+    <input type="text" #description placeholder="Category Description">
+    <button (click)="addCategory(name.value, description.value)">Add</button>
+  </div> -->
+  
+
