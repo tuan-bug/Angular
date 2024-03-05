@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/model/category.model';
 import { CategoryService } from 'src/app/services/category.service';
 
@@ -30,6 +30,8 @@ export class CategoryComponent implements OnInit {
   //   };
   //   this.categoryService.addCategory(newCategory);
   // }
+
+  @Output() dataSent: EventEmitter<number> = new EventEmitter<number>();
 
   deleteCategory(id: number) {
     console.log("xóa: " + id);

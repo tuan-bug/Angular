@@ -7,7 +7,7 @@
 <div class="container mt-5">
   <div class="d-flex justify-content-between mb-4">
     <h2>Category List</h2>
-    <a class="btn  btn-success" routerLink="/add_category">Thêm Danh Mục</a>
+    <a class="btn  btn-success" routerLink="/category/add">Thêm Danh Mục</a>
     
   </div>
     
@@ -25,7 +25,12 @@
           <th scope="row">{{i}}</th>
           <td>{{category.name}}</td>
           <td>{{category.description}}</td>
-          <td><button (click)="deleteCategory(category.id)">Delete</button></td>
+          <td>
+            <button [routerLink]="['/category/edit', category.id]">Edit</button>
+
+           
+            <button (click)="deleteCategory(category.id)">Delete</button>
+          </td>
         </tr>
        
       </tbody>

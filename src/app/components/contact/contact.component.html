@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<div class="container">
+    <h2>Danh sách người dùng</h2>
+    <a routerLink="/user/add" class="btn btn-success">Add User</a>
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Địa chỉ</th>
+          <th scope="col">Action</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users; let i = index">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.full_name}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.address}}</td>
+          <td>
+            <!-- <button (click)="edit(item.id)">Edit</button> -->
+            <button (click)="delete(item.id)">Delete</button>
+          </td>
+          
+        </tr>
+        <!-- You can add more rows here -->
+      </tbody>
+    </table>
+  </div>

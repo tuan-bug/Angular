@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { ChildCategoryComponent } from './components/category/child-category/chi
 import { HomeComponent } from './components/home/home.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
 import { AddFormComponent } from './components/category/add-form/add-form.component';
+import { AddFormProductComponent } from './components/product/add-form-product/add-form-product.component';
+import { AddFormUserComponent } from './components/contact/add-form-user/add-form-user.component';
+import { EditFormComponent } from './components/category/edit-form/edit-form.component';
 
 
 @NgModule({
@@ -25,12 +28,17 @@ import { AddFormComponent } from './components/category/add-form/add-form.compon
     HomeComponent,
     AddCategoryComponent,
     AddFormComponent,
+    AddFormProductComponent,
+    AddFormUserComponent,
+    EditFormComponent,
+    
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, 
+    ReactiveFormsModule,
     
   ],
   providers: [],
