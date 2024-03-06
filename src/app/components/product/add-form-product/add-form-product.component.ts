@@ -26,6 +26,9 @@ export class AddFormProductComponent {
       id: this.products.length + 1,
       name: this.productName,
       price: this.productPrice,
+      unit: 'cái',
+      count: 114,
+      deception: "hông tin liên hệ của công ty hoặc cửa hàng để người dùng có thể liên hệ nếu cần hỗ trợ hoặc thông tin bổ sung về sản phẩm",
       image: this.productImage, 
     }
     this.productService.addProduct(product);

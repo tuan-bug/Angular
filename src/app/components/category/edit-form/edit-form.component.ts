@@ -6,7 +6,8 @@ import { CategoryService } from 'src/app/services/category.service';
 @Component({
   selector: 'app-edit-form',
   templateUrl: './edit-form.component.html',
-  styleUrls: ['./edit-form.component.scss']
+  styleUrls: ['./edit-form.component.scss'],
+  providers: [CategoryService],
 })
 export class EditFormComponent {
   categoryId: number = 0;
@@ -15,10 +16,10 @@ export class EditFormComponent {
   constructor( private router: Router,private route: ActivatedRoute, private categoryService: CategoryService){}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.categoryId = params['id'];
+    this.route.params.subscribe(data => {
+      this.categoryId = Number(data['id']);
       
-      console.log("id edit: " + typeof this.categoryId);
+      console.log("id edit: " + typeof this.categoryId + this.categoryId);
       this.loadCategory();
     })
   }
@@ -35,6 +36,7 @@ export class EditFormComponent {
       name: this.category.name,
       description: this.category.description
     };
+    console.log(updatedCategory)
 
     this.categoryService.updateCategory(updatedCategory);
     this.router.navigate(['category'])

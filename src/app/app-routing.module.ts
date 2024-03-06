@@ -9,6 +9,7 @@ import { AddFormComponent } from './components/category/add-form/add-form.compon
 import { AddFormProductComponent } from './components/product/add-form-product/add-form-product.component';
 import { AddFormUserComponent } from './components/contact/add-form-user/add-form-user.component';
 import { EditFormComponent } from './components/category/edit-form/edit-form.component';
+import { DetailProductComponent } from './components/product/detail-product/detail-product.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/home', pathMatch : 'full'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'category/edit/:id', component: EditFormComponent},
   {path: 'product', component: ProductComponent},
   {path: 'product/add', component: AddFormProductComponent},
+  {path: 'product/detail/:id', component: DetailProductComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'user/add', component: AddFormUserComponent},
   // {path: 'add_category', component: AddFormComponent},

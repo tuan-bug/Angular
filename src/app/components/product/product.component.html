@@ -1,4 +1,4 @@
-<p>product works!</p>
+
 <div class="container mt-4">
     <h2>Danh sách sản phẩm</h2>
     <a class="btn  btn-success" routerLink="/product/add">Thêm Sản Phẩm</a>
@@ -10,7 +10,7 @@
           <h3>{{product.name}}</h3>
           <p>{{product.price}} VND</p>
           
-          <button class="btn btn-primary">Chi tiết</button>
+          <button [routerLink]="['/product/detail/', product.id]" class="btn btn-primary">Chi tiết</button>
         </div>
       </div>
     </div>

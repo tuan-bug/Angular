@@ -19,12 +19,11 @@ export class CategoryService {
     return this.categories;
   }
 
+
+  // dùng rsxjs
   getCategory(categoryId: number): Observable<Category | undefined> {
-    console.log('id aaa: ' + categoryId);
-    console.log("Type of categoryId: " + typeof categoryId);
     const id = Number(categoryId);
     const category = this.categories.find(c => c.id === id);
-    console.log("category: " + category);
     return of(category);
 
   }
@@ -38,6 +37,7 @@ export class CategoryService {
     const index = this.categories.findIndex(category => category.id === upcategory.id);
   if (index !== -1) {
     this.categories[index] = upcategory;
+    console.log("Update ok la")
   } else {
     console.error('Category not found with id:', upcategory.id);
   }

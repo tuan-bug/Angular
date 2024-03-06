@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="{{ product.image }}" class="card-img" alt="{{ product.name }}">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
+                    <p class="card-text">Đơn vị: {{ product.unit }}</p>
+                    <p class="card-text">Số lượng: {{ product.count }}</p>
+                    <p class="card-text">Mô tả: {{ product.deception }}</p>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

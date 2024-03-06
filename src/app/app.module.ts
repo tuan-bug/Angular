@@ -15,6 +15,8 @@ import { AddFormComponent } from './components/category/add-form/add-form.compon
 import { AddFormProductComponent } from './components/product/add-form-product/add-form-product.component';
 import { AddFormUserComponent } from './components/contact/add-form-user/add-form-user.component';
 import { EditFormComponent } from './components/category/edit-form/edit-form.component';
+import { DetailProductComponent } from './components/product/detail-product/detail-product.component';
+import { CategoryService } from './services/category.service';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { EditFormComponent } from './components/category/edit-form/edit-form.com
     AddFormProductComponent,
     AddFormUserComponent,
     EditFormComponent,
+    DetailProductComponent,
     
   
   ],
@@ -41,7 +44,7 @@ import { EditFormComponent } from './components/category/edit-form/edit-form.com
     ReactiveFormsModule,
     
   ],
-  providers: [],
+  providers: [CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
