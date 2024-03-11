@@ -2,16 +2,17 @@
     <div class="card">
         <div class="row no-gutters">
             <div class="col-md-4">
-                <img src="{{ product.image }}" class="card-img" alt="{{ product.name }}">
+                <img src="{{ product.images[0] }}" class="card-img" alt="{{ product.name }}">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    
                     <p class="card-text"><strong>Price:</strong> {{ product.price }}</p>
-                    <p class="card-text">Đơn vị: {{ product.unit }}</p>
-                    <p class="card-text">Số lượng: {{ product.count }}</p>
-                    <p class="card-text">Mô tả: {{ product.deception }}</p>
+                    <p class="card-text">Chiếu khấu: {{ product.discountPercentage }}</p>
+                    <p class="card-text">Xếp hạng: {{ product.rating }}</p>
+                    <p class="card-text">Thương hiệu: {{ product.brand }}</p>
+                    <p class="card-text">Mô tả: {{ product.description }}</p>
                     <button type="button" class="btn btn-primary">Add to Cart</button>
                 </div>
             </div>

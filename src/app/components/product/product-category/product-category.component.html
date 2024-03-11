@@ -13,11 +13,11 @@
         <div class="col-md-9">
             <h4>Sản phẩm</h4>
             <div class="row">
-                <div class="col-md-4" *ngFor="let good of goods.products">
+                <div class="col-md-4" *ngFor="let good of products.products">
                     <div class="card mb-4" style="overflow: hidden;">
                         <img style="width: 100%; height: 270px; object-fit: cover; " src="{{ good.images[0] }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                          <h5 [routerLink]="['/product/detail/', good.id]" class="card-title">{{good.title}}</h5>
+                          <h5 class="card-title">{{good.title}}</h5>
                           <p class="card-text">Giá: {{ good.price }}</p>
                         </div>
                     </div>

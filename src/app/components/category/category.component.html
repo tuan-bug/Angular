@@ -24,18 +24,27 @@
         <tr *ngFor="let category of categories; let i = index ">
           <th scope="row">{{i}}</th>
           <td>{{category.name}}</td>
-          <td>{{category.description}}</td>
+          
           <td>
-            <button [routerLink]="['/category/edit', category.id]">Edit</button>
+            <!-- <button [routerLink]="['/category/edit', category.id]">Edit</button>
 
            
-            <button (click)="deleteCategory(category.id)">Delete</button>
+            <button (click)="deleteCategory(category.id)">Delete</button> -->
           </td>
         </tr>
        
       </tbody>
     </table>
   </div>
+  <div *ngIf="goods && goods.length > 0">
+    <!-- Hiển thị dữ liệu goods ở đây -->
+  </div>
+  <div *ngIf="!goods || goods.length === 0">
+      <!-- Hiển thị thông báo khi không có dữ liệu -->
+  </div>
+  <!-- <ul *ngFor="let item of goods">
+    <li>{{item.title}}</li>
+  </ul> -->
   
   <!-- <div>
     <h2>Add New Category</h2>

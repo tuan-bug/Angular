@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Category } from 'src/app/model/category.model';
+import { Goods } from 'src/app/model/goods.model';
 import { CategoryService } from 'src/app/services/category.service';
+import { GoodsService } from 'src/app/services/goods.service';
 
 @Component({
   selector: 'app-category',
@@ -14,14 +16,21 @@ export class CategoryComponent implements OnInit {
     this.receivedMessage = message; // Nhận và gán giá trị từ component con
   }
 
-  categories!: Category[];
+  categories: any;
+  goods!: Goods[];
 
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.categories = this.categoryService.getCategories();
+    this.categories = this.categoryService.getCategories()
+    .subscribe(category => {
+      this.categories = category;
+      console.log(this.categories);
+    });
+   
   }
 
+  
   // addCategory(name: string, description: string) {
   //   const newCategory: Category = {
   //     id: this.categories.length + 1,
@@ -33,9 +42,9 @@ export class CategoryComponent implements OnInit {
 
   @Output() dataSent: EventEmitter<number> = new EventEmitter<number>();
 
-  deleteCategory(id: number) {
-    console.log("xóa: " + id);
-    console.log(this.categories)
-    this.categoryService.deleteCategory(id);
-  }
+  // deleteCategory(id: number) {
+  //   console.log("xóa: " + id);
+  //   console.log(this.categories)
+  //   this.categoryService.deleteCategory(id);
+  // }
 }

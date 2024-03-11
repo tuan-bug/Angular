@@ -1,0 +1,47 @@
+<div>
+  <div class="container">
+    <h2>Thêm Sản Phẩm</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Tên Sản Phẩm:</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="product.title" name="productName">
+      </div>
+      <div class="form-group">
+        <label for="description">Mô tả:</label>
+        <textarea class="form-control" id="description" required [(ngModel)]="product.description" name="productDescription"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="description">Giá:</label>
+        <input class="form-control" id="description" required [(ngModel)]="product.price" name="productDescription">
+      </div>
+      <div class="form-group">
+        <label for="description">CHiết khấu:</label>
+        <input class="form-control" id="description" required [(ngModel)]="product.discountPercentage" name="productDescription"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Ratting:</label>
+        <input class="form-control" id="description" required [(ngModel)]="product.rating" name="productDescription"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Stock:</label>
+        <input class="form-control" id="description" required [(ngModel)]="product.stock" name="productDescription"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Brand:</label>
+        <input class="form-control" id="description" required [(ngModel)]="product.brand" name="productDescription"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Category:</label>
+        <input class="form-control" id="description" required [(ngModel)]="product.category" name="productDescription"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Thumbnail:</label>
+        <input type="file" class="form-control" id="description" required [(ngModel)]="product.thumbnail" name="productDescription"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Ảnh:</label>
+        <input type="file" class="form-control" id="description" required [(ngModel)]="product.images" name="productDescription"/>
+      </div>
+      <button type="submit" class="btn btn-primary">Thêm</button>
+    </form>
+  </div>
